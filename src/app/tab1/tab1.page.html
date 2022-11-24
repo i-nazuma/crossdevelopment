@@ -1,17 +1,27 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
+    <ion-title>Home</ion-title>
   </ion-toolbar>
 </ion-header>
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>Humans currently in space</ion-card-title>
+    <ion-card-subtitle>provided by api.open-notify.org/astros.json</ion-card-subtitle>
+  </ion-card-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-card-content>
+    <ion-list>
+      <ion-item *ngFor="let human of this.apiService.list">
+        <ion-thumbnail slot="start">
+          <img alt="Anonymous profile picture" src="https://cdn2.iconfinder.com/data/icons/user-avatars-3/100/Astronaut-512.png" />
+        </ion-thumbnail>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+        <ion-label>{{human.name}}<p>{{human.craft}}</p></ion-label>
+
+      </ion-item>
+    </ion-list>
+  </ion-card-content>
+</ion-card>
+<ion-content>
+
 </ion-content>
