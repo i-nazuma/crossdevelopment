@@ -8,7 +8,7 @@ import {Observable} from "rxjs";
 
 export class ApiService {
 
-  public list: String[] = new  Array<any>;
+  public list
   public issPosition
   constructor(private http: HttpClient) {
     this.getAstronautList();
@@ -31,9 +31,6 @@ export class ApiService {
       "http://api.open-notify.org/iss-now.json"
     );
 
-    position.subscribe(result => {
-      this.issPosition = result.iss_position;
-      console.log(this.issPosition)
-    })
+    return position;
   }
 }
