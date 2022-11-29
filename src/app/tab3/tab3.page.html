@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Your Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Profile</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+
+      <div *ngIf="user">
+        <ion-item>
+          <ion-label position="stacked">Name</ion-label>
+          <ion-input [(ngModel)]="user.name"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">Email</ion-label>
+          <ion-input [(ngModel)]="user.email_address"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">Street Name</ion-label>
+          <ion-input [(ngModel)]="user.street_name"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">Door number</ion-label>
+          <ion-input [(ngModel)]="user.door_number"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">Postal Code</ion-label>
+          <ion-input [(ngModel)]="user.postal_code"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">City</ion-label>
+          <ion-input [(ngModel)]="user.city"></ion-input>
+        </ion-item>
+      </div>
+
+      <ion-button expand="block" color="primary" (click)="updateProfile()">
+        <ion-icon name="checkmark-circle-sharp" slot="start"></ion-icon>
+        Save Profile
+      </ion-button>
+
+    </ion-card-content>
+  </ion-card>
+</ion-content>
