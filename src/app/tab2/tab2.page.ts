@@ -26,7 +26,7 @@ export class Tab2Page implements OnInit, OnDestroy {
     })
   }
 
-  //ionViewDidEnter() { this.leafletMap(); }
+  //ionViewDidEnter() { this.leafletMap(); } that didn't work, it laoded the map before the coordinates were set
 
   leafletMap() {
     this.map = Leaflet.map('mapId').setView([this.userCoordinates.latitude, this.userCoordinates.longitude], 5);
@@ -46,9 +46,9 @@ export class Tab2Page implements OnInit, OnDestroy {
       console.log("ERROR: failed to load ISS Coordinates!")
     }
 
-    setTimeout(() => {
+    /*setTimeout(() => {
       this.map.invalidateSize();
-    }, 0);
+    }, 0);*/
   }
 
   ngOnDestroy() {

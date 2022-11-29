@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "fhtw-crossdev": {
+      "hosting": {
+        "app": [
+          "fhtw-crossdev"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "fhtw-crossdev"
+  }
+}
